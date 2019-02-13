@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Soulinthone Hongchith
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,6 +37,10 @@ namespace WPF1
             MessageBox.Show(a.ToString());
 
             ListBox.Items.Add(a);
+
+            txtName.Clear();
+            txtAddress.Clear();
+            txtZipCode.Clear();
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
