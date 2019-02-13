@@ -30,9 +30,29 @@ namespace WPF1
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             Form a = new Form();
+            bool isFormValid = true;
             a.Name = txtName.Text;
             a.Address = txtAddress.Text;
             a.ZipCode = Convert.ToInt32(txtZipCode.Text);
+
+            //check if the user doesn't input the name
+            if (a.Name == "" || a.Name == string.Empty)
+            {
+                MessageBox.Show("Please input your name");
+                txtName.Focus();
+                isFormValid = false;
+            }
+
+            if(a.Address == "")
+            {
+                MessageBox.Show("Please input your address");
+                isFormValid = false;
+            }
+
+            if(isFormValid == false)
+            {
+                return;
+            }
 
             MessageBox.Show(a.ToString());
 
